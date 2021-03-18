@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const ResponsiveLoaderSharp = require('responsive-loader/sharp')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const path = require('path')
 const sass =  require('sass')
@@ -64,6 +65,7 @@ module.exports = (_, { mode }) => {
               loader: 'responsive-loader',
               options: {
                 name: 'assets/[name]-[width]-[contenthash].[ext]',
+                adapter: ResponsiveLoaderSharp,
               },
             },
           ],

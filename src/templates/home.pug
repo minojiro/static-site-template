@@ -11,5 +11,6 @@ block body
   .container
     h1 static-site-template
     p
-      - var img = require('../assets/ofuro_sentou_man.png?sizes[]=600,sizes[]=9999')
-      img(src=img.src srcset=img.srcSet alt="")
+      picture
+        source(srcset=require('../assets/ofuro_sentou_man.png?sizes[]=500,sizes[]=9999&format=webp').srcSet, type='image/webp')
+        img(srcset=require('../assets/ofuro_sentou_man.png?sizes[]=1000').src, alt="")
