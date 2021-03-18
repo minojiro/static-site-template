@@ -1,0 +1,15 @@
+extends _layout
+
+block head
+  include _head
+  +pageHead(
+    "static-site-template",
+    "static-site-template"
+  )
+
+block body
+  .container
+    h1 static-site-template
+    p
+      - var img = require('../assets/ofuro_sentou_man.png?sizes[]=600,sizes[]=9999')
+      img(src=img.src srcset=img.srcSet alt="")
